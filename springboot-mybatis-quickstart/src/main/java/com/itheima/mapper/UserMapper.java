@@ -10,7 +10,7 @@ import java.util.List;
 public interface UserMapper {
 
     //查询操作
-    @Select("select * from user")
+//    @Select("select * from user")
     public List<User> findAll();
 
     //删除操作
