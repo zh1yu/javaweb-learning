@@ -1,0 +1,21 @@
+controller层只写实现类
+service层实现类和接口
+mapper层只写接口，在mybatis中因为@Mapper注解可以生成代理对象，即无需写实现类
+在spring的dao里接口要写实现类
+
+
+在删除操作过程中，不加@RequestParam注解就需要保证Integer id的形参名与url中的名字一样
+
+在插入操作（post传递）中，需要在形参引入@RequestBody注解（传递的是json格式），同时形参的对象属性要和post传递的参数名一样
+如果传递的参数可以封装在一个类中，在后端代码的函数参数要加@RequestBody注解，而且类的属性要和前端传递json的key要一致
+但如果通过get请求，则不需要加@RequestBody注解
+
+根据ID查询时，需要加入@PathVariable注解，同时形参名要与url中的名字一样
+
+PageResult实体类泛型
+
+在resources文件夹下创建同包同名的数据库查找文件时，文件名是有斜杠而不是用点
+
+@Data注解自动生成get与set方法
+
+在insert插入sql中主义value是驼峰命名
