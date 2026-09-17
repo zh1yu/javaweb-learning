@@ -4,13 +4,20 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.itheima.mapper.EmpExprMapper">
 
-<!--    批量保存员工经历-->
+    <!--    批量保存员工经历-->
     <insert id="insertBatch">
         INSERT INTO emp_expr (emp_id, begin,end,company,job) VALUES
         <foreach collection="exprList" item="expr" separator=",">
-<!--        这里expr类似for里的i，所有需要用expr.-->
+        <!--   这里expr类似for里的i，所有需要用expr.-->
             (#{expr.empId}, #{expr.begin}, #{expr.end}, #{expr.company}, #{expr.job})
         </foreach>
     </insert>
 
+    <!--    根据empIds删除员工经历-->
+    <delete id="deleteByEmpIds">
+        DELETE FROM emp_expr WHERE emp_id IN
+        <foreach collection="empIds" item="empId" separator="," open="(" close=")">
+            #{empId}
+        </foreach>
+    </delete>
 </mapper>

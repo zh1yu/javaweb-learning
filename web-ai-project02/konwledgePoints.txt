@@ -18,4 +18,7 @@ PageResult实体类泛型
 
 @Data注解自动生成get与set方法
 
-在insert插入sql中主义value是驼峰命名
+在insert插入sql中注意value是驼峰命名
+
+在EmpServiceImpl类中注入接口对象EmpLogService empLogService;而不是类对象EmpLogServiceImpl empLogServiceImpl
+
