@@ -18,6 +18,12 @@ public interface EmpService {
 
     //删除接口
     void delete(List<Integer> ids);
+
+    //根据ID查询员工
+    Emp getInfo(Integer id);
+
+    //修改员工
+    void update(Emp emp);
 }
 
 

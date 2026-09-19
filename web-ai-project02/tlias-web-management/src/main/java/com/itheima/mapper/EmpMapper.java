@@ -9,6 +9,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 
 
 //原始方式分页
@@ -42,6 +43,17 @@ public interface EmpMapper {
     //根据ID删除
     void deleteByIds(List<Integer> ids);
 
+    //根据ID查询员工信息和员工的工作经历信息
+    Emp getById(Integer id);
+
+    //根据ID更新员工基本信息
+    void updateById(Emp emp);
+
+    //统计员工职位人数
+    List<Map<String, Object>> countEmpJobData();
+
+    //统计员工性别人数
+    List<Map<String, Object>> countEmpGenderData();
 }
 
 
